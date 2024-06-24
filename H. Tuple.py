@@ -34,13 +34,12 @@ for cel in NestedTuple:
 
 # Chapter 6 List and Tuple.
 data = [
-    (1,2,3, [4,5,6]),
-    (7,8,9,[10,11,12]),
+    (1, 2, 3, [4, 5, 6]),
+    (7, 8, 9, [10, 11, 12]),
 ]
 
-data.append((13,14,16,[17,18,19]))
+data.append((13, 14, 16, [17, 18, 19]))
 
 for row in data:
     for cel in row:
-        print(cel,end=" ")
-
+        print(cel, end=" ")
