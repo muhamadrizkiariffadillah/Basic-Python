@@ -105,3 +105,27 @@ def user_login(username: str, password: str) -> (dict, NameError):
 
 
 print(user_login("kibo", "password"))
+
+
+# *args = for many arguments
+def iteration(*args):
+    for x in args:
+        print(f"{x}", end=" ")
+    print()
+
+
+iteration([x for x in range(1, 5)])
+
+# kwargs = Keyword arguments.
+def kewyargs(**kwargs):
+    for key, value in kwargs.items():
+        print(f"{key} == {value}")
+
+kewyargs(first_name="Muhamad Rizki",last_name= "Arif Fadillah",age=25,handsome=True, whatever = None)
+
+# default parameter
+def full_name(fullname:str = "Username",last_name:str ="Arif Fadillah"):
+    return fullname + " " + last_name
+
+print(full_name())
+print(full_name("Kibo","Bokir"))

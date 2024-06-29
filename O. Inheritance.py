@@ -16,7 +16,12 @@ class Student(Person):
         super().__init__(fname, lname)
         self.score = score
 
+    #add method
+    def welcome(self):
+        print(f"{self.fname} {self.lname} {self.score}")
+
 
 # variable
 student = Student("Muhamad Rizki", "Arif Fadillah", 90)
 print(student,student.score)
+print(student.welcome())
