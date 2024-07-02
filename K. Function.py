@@ -116,16 +116,55 @@ def iteration(*args):
 
 iteration([x for x in range(1, 5)])
 
+
 # kwargs = Keyword arguments.
 def kewyargs(**kwargs):
     for key, value in kwargs.items():
         print(f"{key} == {value}")
 
-kewyargs(first_name="Muhamad Rizki",last_name= "Arif Fadillah",age=25,handsome=True, whatever = None)
+
+kewyargs(first_name="Muhamad Rizki", last_name="Arif Fadillah", age=25, handsome=True, whatever=None)
+
 
 # default parameter
-def full_name(fullname:str = "Username",last_name:str ="Arif Fadillah"):
+def full_name(fullname: str = "Username", last_name: str = "Arif Fadillah"):
     return fullname + " " + last_name
 
+
 print(full_name())
-print(full_name("Kibo","Bokir"))
+print(full_name("Kibo", "Bokir"))
+
+# Typing
+from typing import Union
+from typing import Optional
+
+
+def return_value(a, b: int) -> Union[float, None]:
+    c = float()
+    if a and b != 0:
+        c = a / b
+        return c
+    else:
+        return None
+
+
+print(return_value(50, 3))
+print(return_value(100, 0))
+
+
+def division(a, b: int) -> Optional[float]:
+    if a and b != 0:
+        return a / b
+    else:
+        return
+
+
+print(division(10, 3))
+print(division(1, 0))
+
+
+def test_unpack(input_list: list[str], index: int) -> str:
+    return input_list[index]
+
+
+print(test_unpack("Muhamad", 0))
