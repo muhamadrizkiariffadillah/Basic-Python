@@ -1,6 +1,7 @@
 import fastapi
 from fastapi import Depends
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
+from typing import Union
 
 app = fastapi.FastAPI()
 
@@ -20,7 +21,7 @@ users1 = {
 }
 
 
-def get_user_indo(user: dict) -> (dict, TypeError):
+def get_user_indo(user: dict) -> Union[dict, TypeError]:
     users = user
     return users, None
 
@@ -48,3 +49,4 @@ def get_user_v2():
 def get_user_info():
     users, err = get_user_indo(users1)
     return users
+
